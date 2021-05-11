@@ -23,3 +23,8 @@
     margin-right: auto;
     margin-left: auto;
   }
+  
+  .name {
+    font-weight: 700;
+    margin-right: 12;
+  }

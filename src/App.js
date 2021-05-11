@@ -4,8 +4,10 @@ import styles from "./Routes/Route.module.css"
 import LinearProgress from '@material-ui/core/LinearProgress';
 import FormPhonebook from "./Components/PhoneBook";
 import ContactItem from "./Components/ContactItem";
-import Login from "./Components/Login/Login"
-import Register from "./Components/Register/Register"
+import AuthNav from './Components/AppBar/authNav';
+
+// import Login from "./Components/Login/Login"
+// import Register from "./Components/Register/Register"
 import Filter from "./Components/Filter";
 import Section from "./Components/Section";
 import { connect } from "react-redux";
@@ -14,6 +16,7 @@ import {getLoading} from "./Redux/Phone/phone_selector"
 import { lazy, Suspense } from "react";
 import { Route, NavLink, Switch, Redirect } from "react-router-dom";
 import routes from "./Routes/Routes";
+import AppBar  from "./Components/AppBar/AppBar"
 
 class App extends Component {
   // function App () 
@@ -25,8 +28,11 @@ class App extends Component {
     <div>
       <Section title="Phonebook">
       {this.props.isLoading &&  <LinearProgress color="secondary" />}
+      {/* <AuthNav /> */}
+       <AppBar/>
+
         {/* <FormPhonebook /> */}
-        <ul className={styles.list}>
+        {/* <ul className={styles.list}>
         <li className={styles.item}>
           <NavLink
             exact
@@ -55,7 +61,7 @@ class App extends Component {
             Register
           </NavLink>
         </li>
-      </ul>
+      </ul> */}
     
       
       <Suspense fallback={<p>Is loading....</p>}>
