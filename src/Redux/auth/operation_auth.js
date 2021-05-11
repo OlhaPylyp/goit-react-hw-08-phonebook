@@ -30,19 +30,42 @@ axios.defaults.baseURL = "https://connections-api.herokuapp.com/";
 //   //   .catch((err) => dispatch(getContactsFailure(err)));
 // };
 
-export const register = ({ name, email, password }) => async (dispatch, getState) => {
+export const register = ({ name, email, password }) => async (
+  dispatch,
+  getState
+) => {
   dispatch(registerRequest());
-try {const response = await axios
-    .post("/users/signup", { name, email, password  })
-    dispatch(registerSuccess(response.data))}
-    catch(err) {dispatch(registerError(err))};
-  
+  try {
+    const response = await axios.post("/users/signup", {
+      name,
+      email,
+      password,
+    });
+    dispatch(registerSuccess(response.data));
+  } catch (err) {
+    dispatch(registerError(err.message));
+  }
 };
-// export const login = (contactId) => (dispatch) => {
-//   dispatch(loginRequest());
+export const login = ({ name, email, password }) => async (dispatch) => {
+  dispatch(loginRequest());
+  try {
+    const response = await axios.post("/users/login", {
+      name,
+      email,
+      password,
+    });
+    dispatch(loginSuccess(response.data));
+  } catch (error) {
+    dispatch(loginError(error.message));
+  }
+};
 
-//   axios
-//     .delete(`/contacts/${contactId}`)
-//     .then(() => dispatch(loginSuccess(contactId)))
-//     .catch((error) => dispatch(deleteChangeFailure(error)));
-// };
+export const logout = () => async (dispatch) => {
+  dispatch(logoutRequest());
+  try {
+    const response = await axios.post("/users/login");
+    dispatch(logoutSuccess(response.data));
+  } catch (error) {
+    dispatch(logoutError(error.message));
+  }
+};

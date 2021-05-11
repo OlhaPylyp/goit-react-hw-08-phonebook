@@ -1,5 +1,6 @@
 import { Component } from "react";
 import "./App.css";
+import styles from "./Routes/Route.module.css"
 import LinearProgress from '@material-ui/core/LinearProgress';
 import FormPhonebook from "./Components/PhoneBook";
 import ContactItem from "./Components/ContactItem";
@@ -12,6 +13,7 @@ import {getContact}  from "./Redux/Phone/operationApi"
 import {getLoading} from "./Redux/Phone/phone_selector"
 import { lazy, Suspense } from "react";
 import { Route, NavLink, Switch, Redirect } from "react-router-dom";
+import routes from "./Routes/Routes";
 
 class App extends Component {
   // function App () 
@@ -23,43 +25,95 @@ class App extends Component {
     <div>
       <Section title="Phonebook">
       {this.props.isLoading &&  <LinearProgress color="secondary" />}
-        <FormPhonebook />
-     
-      </Section>
-      <Section title="Contacts list">
-        <Filter />
-        <ContactItem />{" "}
-      </Section>
-      <ul className={styles.list}>
+        {/* <FormPhonebook /> */}
+        <ul className={styles.list}>
         <li className={styles.item}>
           <NavLink
             exact
-            to="/"
-            // className={styles.NavLink}
-            // activeClassName={styles.NavLinkActive}
+            to="/Contacts"
+            className={styles.NavLink}
+            activeClassName={styles.NavLinkActive}
           >
-          Contacts
+            Contacts
           </NavLink>
         </li>
         <li className={styles.item}>
           <NavLink
-            to="/MoviesPage"
+            to="/Login"
             className={styles.NavLink}
             activeClassName={styles.NavLinkActive}
           >
             Login
           </NavLink>
+          </li>
+          <li className={styles.item}>
+          <NavLink
+            to="/Register"
+            className={styles.NavLink}
+            activeClassName={styles.NavLinkActive}
+          >
+            Register
+          </NavLink>
         </li>
       </ul>
+    
+      
       <Suspense fallback={<p>Is loading....</p>}>
         <Switch>
-         <Route exact path="/contacts" component ={ContactItem}/>
-         <Route  path="/login" component ={Login}/>
-         <Route  path="/register" component ={Register}/>
+          {routes.map(({ path, exact, component }) => (
+            <Route key={path} exact={exact} path={path} component={component} />
+          ))}
         </Switch>
-      </Suspense>
+      </Suspense> 
+     
+      </Section>
+      <Section title="Contacts list">
+        <Filter />  
+         {/* <Register/>
+         <Login/> */}
+        <ContactItem />{" "}
+      </Section>
+      {/* <div className={styles.container}> */}
+      {/* <ul className={styles.list}>
+        <li className={styles.item}>
+          <NavLink
+            exact
+            to="/Contacts"
+            className={styles.NavLink}
+            activeClassName={styles.NavLinkActive}
+          >
+            Contacts
+          </NavLink>
+        </li>
+        <li className={styles.item}>
+          <NavLink
+            to="/Login"
+            className={styles.NavLink}
+            activeClassName={styles.NavLinkActive}
+          >
+            Login
+          </NavLink>
+          </li>
+          <li className={styles.item}>
+          <NavLink
+            to="/Register"
+            className={styles.NavLink}
+            activeClassName={styles.NavLinkActive}
+          >
+            Register
+          </NavLink>
+        </li>
+      </ul>
+    
       
-      
+      <Suspense fallback={<p>Is loading....</p>}>
+        <Switch>
+          {routes.map(({ path, exact, component }) => (
+            <Route key={path} exact={exact} path={path} component={component} />
+          ))}
+        </Switch>
+      </Suspense>  */}
+       {/* </div> */}
     </div>
   );
 }}

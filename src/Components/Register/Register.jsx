@@ -1,15 +1,15 @@
 import { Component } from "react";
-import styles from "./FormPhonebook.module.css";
+import styles from "./Register.module.css";
 import { connect } from "react-redux";
 import { register } from "../../Redux/auth/operation_auth";
-import {getAllContacts} from "../../Redux/Phone/phone_selector";
+// import { getAllContacts } from "../../Redux/Phone/phone_selector";
+
 class Register extends Component {
   state = {
     name: "",
     email: "",
-    password:'',
+    password: "",
   };
-
 
   handleChange = (e) => {
     const { name, value } = e.currentTarget;
@@ -28,47 +28,56 @@ class Register extends Component {
     //   this.reset();
     //   return;
     // }
-    this.props.onSubmit(this.state);
+    this.props.onRegister(this.state);
     this.reset();
   };
   reset = () => {
-    return this.setState({ name: "", email: "",password:"" });
+    return this.setState({ name: "", email: "", password: "" });
   };
 
   render() {
-    console.log("re-render")
+    const { name, email, password } = this.state;
+    console.log("re-render");
     return (
       <div className={styles.form_container}>
-        <form className={styles.form} onSubmit={this.handleSubmit}>
-          <label className={styles.label} htmlFor={this.nameId}>
-            Name
+        <form
+          className={styles.form}
+          onSubmit={this.handleSubmit}
+          autoComplete="off"
+        >
+          <label className={styles.label}>
+            <span className={styles.span}>Name</span>
             <input
               className={styles.input}
               type="text"
               name="name"
-              pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-              title="Имя может состоять только из букв, апострофа, тире и пробелов. Например Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan и т. п."
-              required
-              value={this.state.name}
+              value={name}
               onChange={this.handleChange}
-              id={this.nameId}
             />
           </label>
           <label className={styles.label}>
-            <span className={styles.span}>Email</span>
+            Email
             <input
               className={styles.input}
               type="email"
               name="email"
-            //   pattern="(\+?( |-|\.)?\d{1,2}( |-|\.)?)?(\(?\d{3}\)?|\d{3})( |-|\.)?(\d{3}( |-|\.)?\d{4})"
-            //   title="Номер телефона должен состоять из 11-12 цифр и может содержать цифры, пробелы, тире, пузатые скобки и может начинаться с +"
-              required
-              value={this.state.email}
+              value={email}
               onChange={this.handleChange}
             />
           </label>
+          <label className={styles.label}>
+            <span className={styles.span}>Password</span>
+            <input
+              className={styles.input}
+              type="password"
+              name="password"
+              value={password}
+              onChange={this.handleChange}
+            />
+          </label>
+
           <button type="submit" className={styles.btn}>
-            Add contact
+            Login
           </button>
         </form>
       </div>
@@ -76,9 +85,6 @@ class Register extends Component {
   }
 }
 const mapDispatchToProps = {
-
-      onSubmit: 
- 
-  };
-  export default connect(null, mapDispatchToProps)(Register);
-  
+  onRegister: register,
+};
+export default connect(null, mapDispatchToProps)(Register);

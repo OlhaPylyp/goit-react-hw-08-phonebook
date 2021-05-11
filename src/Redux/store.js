@@ -12,6 +12,7 @@ import storage from "redux-persist/lib/storage";
 import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
 import logger from "redux-logger";
 import contactsReducer from "./Phone/phone-reducer";
+import  authReducer from "./auth/auth_reducer"
 
 // const persistConfig = {
 //   key: "phoneBooks",
@@ -33,6 +34,7 @@ const middleware = [
 const store = configureStore({
   reducer: {
     contacts: contactsReducer,
+    auth:authReducer,
   },
   middleware,
   devTools: process.env.NODE_ENV === "development",
