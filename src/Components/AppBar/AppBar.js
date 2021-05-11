@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import AuthNav from './authNav';
 import UserMenu from './UserMenu';
+import Navigation from './Navigation';
 import { getIsAuthenticated } from '../../Redux/auth/auth_selector';
 
 const styles = {
@@ -14,7 +15,7 @@ const styles = {
 
 const AppBar = ({ isLoginOn }) => (
   <header style={styles.header}>
-  
+  <Navigation/>
     {isLoginOn ? <UserMenu/>: <AuthNav/>}
   </header>
 );

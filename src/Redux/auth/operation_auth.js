@@ -1,4 +1,5 @@
 import axios from "axios";
+import { PersistGate } from "redux-persist/integration/react";
 
 import {
   registerRequest,
@@ -29,10 +30,14 @@ axios.defaults.baseURL = "https://connections-api.herokuapp.com/";
 //   //   .then(({ data }) => dispatch(getContactsSuccess(data)))
 //   //   .catch((err) => dispatch(getContactsFailure(err)));
 // };
-
+const token={
+  set(token) {axios.defaults.headers.common.Authorization = `Bearer ${token}`;},
+  unset() {
+    axios.defaults.headers.common.Authorization = '';
+  },
+}
 export const register = ({ name, email, password }) => async (
-  dispatch,
-  getState
+  dispatch
 ) => {
   dispatch(registerRequest());
   try {
@@ -41,6 +46,7 @@ export const register = ({ name, email, password }) => async (
       email,
       password,
     });
+    token.set(response.data.token) 
     dispatch(registerSuccess(response.data));
   } catch (err) {
     dispatch(registerError(err.message));
@@ -54,18 +60,35 @@ export const login = ({ name, email, password }) => async (dispatch) => {
       email,
       password,
     });
+    token.set(response.data.token) 
     dispatch(loginSuccess(response.data));
   } catch (error) {
     dispatch(loginError(error.message));
   }
 };
 
-export const logout = () => async (dispatch) => {
+export const logOut = () => async (dispatch) => {
   dispatch(logoutRequest());
   try {
-    const response = await axios.post("/users/login");
-    dispatch(logoutSuccess(response.data));
+    await axios.post("/users/logout");
+    token.unset() 
+    dispatch(logoutSuccess());
   } catch (error) {
     dispatch(logoutError(error.message));
+  }
+};
+export const getUser =()=> async (dispatch, getState) => {
+  const {auth: {token:persistedToken },}=getState()
+  if (!persistedToken ) {
+    return;
+  }
+  token.set(persistedToken) 
+  dispatch(getCurrentUserRequest());
+  try {
+    await axios.post("/users//users/current");
+    token.unset() 
+    dispatch(getCurrentUserSuccess());
+  } catch (error) {
+    dispatch(getCurrentUserError(error.message));
   }
 };

@@ -1,6 +1,6 @@
 import {
   persistStore,
-  // persistReducer,
+  persistReducer,
   FLUSH,
   REHYDRATE,
   PAUSE,
@@ -14,11 +14,11 @@ import logger from "redux-logger";
 import contactsReducer from "./Phone/phone-reducer";
 import  authReducer from "./auth/auth_reducer"
 
-// const persistConfig = {
-//   key: "phoneBooks",
-//   storage,
-//   blacklist:["filter"],
-// };
+const authConfig = {
+  key: "auth",
+  storage,
+  whitelist:["token"],
+};
 const middleware = [
   ...getDefaultMiddleware({
     serializableCheck: {
@@ -34,13 +34,13 @@ const middleware = [
 const store = configureStore({
   reducer: {
     contacts: contactsReducer,
-    auth:authReducer,
+    auth: persistReducer(authConfig, authReducer),
   },
   middleware,
   devTools: process.env.NODE_ENV === "development",
 });
 
-// const persistor = persistStore(store);
-// eslint-disable-next-line
-// export default { store, persistor };
-export default store;
+const persistor = persistStore(store);
+
+export default { store, persistor };
+// export default store;

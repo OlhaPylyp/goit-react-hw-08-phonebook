@@ -30,6 +30,7 @@ class App extends Component {
       {this.props.isLoading &&  <LinearProgress color="secondary" />}
       {/* <AuthNav /> */}
        <AppBar/>
+     
 
         {/* <FormPhonebook /> */}
         {/* <ul className={styles.list}>
