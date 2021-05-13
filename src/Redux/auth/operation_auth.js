@@ -17,19 +17,6 @@ import {
 } from "./auth_actions";
 axios.defaults.baseURL = "https://connections-api.herokuapp.com/";
 
-// export const token = () => async (dispatch) => {
-//   //   dispatch(());
-//   //   try {
-//   //     const { data } = await axios.get('/contacts');
-//   //     dispatch( registerSuccess(data));
-//   //   } catch (error) {
-//   //     dispatch(registerError(error));
-//   //   }
-//   // axios
-//   //   .get("/contacts")
-//   //   .then(({ data }) => dispatch(getContactsSuccess(data)))
-//   //   .catch((err) => dispatch(getContactsFailure(err)));
-// };
 const token = {
   set(token) {
     axios.defaults.headers.common.Authorization = `Bearer ${token}`;

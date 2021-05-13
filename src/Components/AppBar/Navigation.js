@@ -9,7 +9,7 @@ const Navigation = ({ isLoginOn }) => (
   <nav className={styles.nav}>
     <NavLink
       exact
-      to="/"
+      to="/homepage"
       className={styles.link}
       activeClassName={styles.activeLink}
     >

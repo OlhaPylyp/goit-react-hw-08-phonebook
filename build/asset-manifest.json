@@ -1,23 +1,36 @@
 {
   "files": {
-    "main.css": "/static/css/main.dee26d7d.chunk.css",
-    "main.js": "/static/js/main.893a7208.chunk.js",
-    "main.js.map": "/static/js/main.893a7208.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.72228131.js",
-    "runtime-main.js.map": "/static/js/runtime-main.72228131.js.map",
-    "static/css/2.de71bbd8.chunk.css": "/static/css/2.de71bbd8.chunk.css",
-    "static/js/2.2c119861.chunk.js": "/static/js/2.2c119861.chunk.js",
-    "static/js/2.2c119861.chunk.js.map": "/static/js/2.2c119861.chunk.js.map",
+    "Login.css": "/static/css/Login.73be6307.chunk.css",
+    "Login.js": "/static/js/Login.7a88562a.chunk.js",
+    "Login.js.map": "/static/js/Login.7a88562a.chunk.js.map",
+    "Register.css": "/static/css/Register.fab137aa.chunk.css",
+    "Register.js": "/static/js/Register.ab7a35d4.chunk.js",
+    "Register.js.map": "/static/js/Register.ab7a35d4.chunk.js.map",
+    "contacts.css": "/static/css/contacts.61033687.chunk.css",
+    "contacts.js": "/static/js/contacts.dccae4d0.chunk.js",
+    "contacts.js.map": "/static/js/contacts.dccae4d0.chunk.js.map",
+    "main.css": "/static/css/main.58bfac8d.chunk.css",
+    "main.js": "/static/js/main.b991f199.chunk.js",
+    "main.js.map": "/static/js/main.b991f199.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.8dc72a4f.js",
+    "runtime-main.js.map": "/static/js/runtime-main.8dc72a4f.js.map",
+    "static/css/5.de71bbd8.chunk.css": "/static/css/5.de71bbd8.chunk.css",
+    "static/js/5.60c94c47.chunk.js": "/static/js/5.60c94c47.chunk.js",
+    "static/js/5.60c94c47.chunk.js.map": "/static/js/5.60c94c47.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/2.de71bbd8.chunk.css.map": "/static/css/2.de71bbd8.chunk.css.map",
-    "static/css/main.dee26d7d.chunk.css.map": "/static/css/main.dee26d7d.chunk.css.map",
-    "static/js/2.2c119861.chunk.js.LICENSE.txt": "/static/js/2.2c119861.chunk.js.LICENSE.txt"
+    "static/css/5.de71bbd8.chunk.css.map": "/static/css/5.de71bbd8.chunk.css.map",
+    "static/css/Login.73be6307.chunk.css.map": "/static/css/Login.73be6307.chunk.css.map",
+    "static/css/Register.fab137aa.chunk.css.map": "/static/css/Register.fab137aa.chunk.css.map",
+    "static/css/contacts.61033687.chunk.css.map": "/static/css/contacts.61033687.chunk.css.map",
+    "static/css/main.58bfac8d.chunk.css.map": "/static/css/main.58bfac8d.chunk.css.map",
+    "static/js/5.60c94c47.chunk.js.LICENSE.txt": "/static/js/5.60c94c47.chunk.js.LICENSE.txt",
+    "static/media/phoneBook.b6d8227a.png": "/static/media/phoneBook.b6d8227a.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.72228131.js",
-    "static/css/2.de71bbd8.chunk.css",
-    "static/js/2.2c119861.chunk.js",
-    "static/css/main.dee26d7d.chunk.css",
-    "static/js/main.893a7208.chunk.js"
+    "static/js/runtime-main.8dc72a4f.js",
+    "static/css/5.de71bbd8.chunk.css",
+    "static/js/5.60c94c47.chunk.js",
+    "static/css/main.58bfac8d.chunk.css",
+    "static/js/main.b991f199.chunk.js"
   ]
 }

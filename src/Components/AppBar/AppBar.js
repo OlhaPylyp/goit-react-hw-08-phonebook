@@ -2,19 +2,13 @@ import { connect } from "react-redux";
 import AuthNav from "./authNav";
 import UserMenu from "./UserMenu";
 import Navigation from "./Navigation";
+import styles from "./AppBar.module.css";
 import { getIsAuthenticated } from "../../Redux/auth/auth_selector";
 
-const styles = {
-  header: {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    borderBottom: "1px solid #2A363B",
-  },
-};
+
 
 const AppBar = ({ isLoginOn }) => (
-  <header style={styles.header}>
+  <header className={styles.header}>
     <Navigation />
     {isLoginOn ? <UserMenu /> : <AuthNav />}
   </header>

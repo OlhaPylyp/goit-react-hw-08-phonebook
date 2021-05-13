@@ -18,16 +18,6 @@ class Register extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
 
-    // const sameName = this.props.items.some(
-    //   (item) => item.name === this.state.name
-    // );
-    // if (sameName) {
-    //   window.alert(
-    //     `LocalHost:3000 says ${this.state.name} is already in contact`
-    //   );
-    //   this.reset();
-    //   return;
-    // }
     this.props.onRegister(this.state);
     this.reset();
   };

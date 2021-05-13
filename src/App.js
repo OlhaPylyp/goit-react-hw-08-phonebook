@@ -3,7 +3,7 @@ import "./App.css";
 // import styles from "./Routes/Route.module.css";
 import LinearProgress from "@material-ui/core/LinearProgress";
 import Section from "./Components/Section";
-import HomePage from "./Components/AppBar/HomePage";
+// import HomePage from "./Components/AppBar/HomePage";
 import { connect } from "react-redux";
 import { getUser } from "./Redux/auth/operation_auth";
 import { getLoading } from "./Redux/Phone/phone_selector";
@@ -13,9 +13,9 @@ import PrivateRoute from "./PrivateRoute";
 import PublicRoute from "./PublicRoute";
 import AppBar from "./Components/AppBar/AppBar";
 
-// const HomePage = lazy(() =>
-//   import("./Components/AppBar/HomePage" /* webpackChunkName: "homePage" */)
-// );
+const HomePage = lazy(() =>
+  import("./Components/AppBar/HomePage" /* webpackChunkName: "homePage" */)
+);
 const Contacts = lazy(() =>
   import("./Components/Contacts" /* webpackChunkName: "contacts" */)
 );
@@ -36,8 +36,7 @@ class App extends Component {
         <Section>
           {this.props.isLoading && <LinearProgress color="secondary" />}
           <AppBar />
-          <HomePage />
-
+         
           <Suspense
             fallback={
               <p>
@@ -64,12 +63,12 @@ class App extends Component {
                     />
                   )
               )} */}
-              {/* <PublicRoute
+              <PublicRoute
                 path="/homePage"
                 restricted
                  redirectTo="/Login"
                 component={HomePage}
-              /> */}
+              />
               <PublicRoute
                 path="/register"
                 restricted
