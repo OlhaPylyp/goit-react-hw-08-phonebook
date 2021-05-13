@@ -33,6 +33,6 @@
   background-position: center;
   background-size: cover;
   background-color: rgba(47, 48, 58, 0.4);
-  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../../image/2.jpg);
+  background-image: linear-gradient(to right, rgba(142, 145, 189, 0.4), rgba(47, 48, 58, 0.4)), url(../../image/2.jpg);
     }
 h2{margin: 0;}
