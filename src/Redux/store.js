@@ -15,9 +15,9 @@ import contactsReducer from "./Phone/phone-reducer";
 import  authReducer from "./auth/auth_reducer"
 
 const authConfig = {
-  key: "auth",
+  key: 'auth',
   storage,
-  whitelist:["token"],
+  whitelist: ['token'],
 };
 const middleware = [
   ...getDefaultMiddleware({
@@ -33,14 +33,13 @@ const middleware = [
 
 const store = configureStore({
   reducer: {
-    contacts: contactsReducer,
-    auth: persistReducer(authConfig, authReducer),
+        auth: persistReducer(authConfig, authReducer),
+        contacts: contactsReducer
   },
   middleware,
   devTools: process.env.NODE_ENV === "development",
 });
 
-const persistor = persistStore(store);
-
+const persistor = persistStore(store);;
 export default { store, persistor };
 // export default store;

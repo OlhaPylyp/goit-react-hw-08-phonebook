@@ -17,23 +17,19 @@ import axios from "axios";
 export const getContact = () => async (dispatch) => {
   dispatch(getContactsRequest());
   try {
-    const { data } = await axios.get('/contacts');
+    const { data } = await axios.get("/contacts");
 
     dispatch(getContactsSuccess(data));
   } catch (error) {
     dispatch(getContactsFailure(error));
   }
-  // axios
-  //   .get("/contacts")
-  //   .then(({ data }) => dispatch(getContactsSuccess(data)))
-  //   .catch((err) => dispatch(getContactsFailure(err)));
 };
 
-export const addContact = ({name, number}) => (dispatch,getState) => {
+export const addContact = ({ name, number }) => (dispatch, getState) => {
   dispatch(addContactsRequest());
- 
+
   axios
-    .post('/contacts', {name,number})
+    .post("/contacts", { name, number })
     .then(({ data }) => dispatch(addSuccess(data)))
     .catch((err) => dispatch(addFailure(err)));
 };

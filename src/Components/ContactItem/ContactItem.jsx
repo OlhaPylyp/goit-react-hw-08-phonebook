@@ -38,7 +38,7 @@ ContactItem.propTypes = {
   ).isRequired,
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   contacts: getUniqContact(state),
 });
 const mapDispatchToProps = (dispatch) => {

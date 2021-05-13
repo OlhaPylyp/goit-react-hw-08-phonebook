@@ -77,7 +77,7 @@ class Register extends Component {
           </label>
 
           <button type="submit" className={styles.btn}>
-            Login
+            Sign Up
           </button>
         </form>
       </div>

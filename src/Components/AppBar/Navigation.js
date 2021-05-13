@@ -1,25 +1,36 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import styles from "./AppBar.module.css"
+import React from "react";
+import { NavLink } from "react-router-dom";
+import styles from "./AppBar.module.css";
+import { connect } from "react-redux";
+import phoneBook from "../../image/phoneBook.png";
+import { getIsAuthenticated } from "../../Redux/auth/auth_selector";
 
-
-
-const Navigation = () => (
-  <nav>
-    <NavLink to="/" exact  className={styles.link}
-            activeClassName={styles.activeLink}>
-      PhoneBook
+const Navigation = ({ isLoginOn }) => (
+  <nav className={styles.nav}>
+    <NavLink
+      exact
+      to="/"
+      className={styles.link}
+      activeClassName={styles.activeLink}
+    >
+      <img src={phoneBook} width="40" alt="PhoneBook" />
     </NavLink>
 
-    <NavLink
-            exact
-            to="/Contacts"
-            className={styles.link}
-            activeClassName={styles.activeLink}
-          >
-            Contacts
-          </NavLink>
+    {isLoginOn && (
+      <NavLink
+        to="/contacts"
+        exact
+        className={styles.link}
+        activeClassName={styles.activeLink}
+      >
+        Contacts
+      </NavLink>
+    )}
   </nav>
 );
 
-export default Navigation;
+const mapStateToProps = (state) => ({
+  isLoginOn: getIsAuthenticated(state),
+});
+
+export default connect(mapStateToProps)(Navigation);

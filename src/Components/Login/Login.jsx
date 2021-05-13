@@ -3,7 +3,7 @@ import styles from "./Login.module.css";
 import { connect } from "react-redux";
 import { login } from "../../Redux/auth/operation_auth";
 
-import { getAllContacts } from "../../Redux/Phone/phone_selector";
+// import { getAllContacts } from "../../Redux/Phone/phone_selector";
 // const styles = {
 //     form: {
 //       width: 320,
@@ -16,6 +16,7 @@ import { getAllContacts } from "../../Redux/Phone/phone_selector";
 //   };
 class Login extends Component {
   state = {
+    name:"",
     email: "",
     password: "",
   };
@@ -46,7 +47,6 @@ class Login extends Component {
 
   render() {
     const { name, email, password } = this.state;
-    console.log("re-render");
     return (
       <div className={styles.form_container}>
         <form className={styles.form} onSubmit={this.handleSubmit} autoComplete="off">

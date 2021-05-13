@@ -1,23 +1,18 @@
 import { connect } from "react-redux";
-import { getUsername } from "../../Redux/auth/auth_selector";
-import {logOut} from "../../Redux/auth/operation_auth";
-import { NavLink } from "react-router-dom";
+import { getUserEmail } from "../../Redux/auth/auth_selector";
+import { logOut } from "../../Redux/auth/operation_auth";
 import styles from "../../Routes/Route.module.css";
-import axios from "axios";
 
-
-
-const UserMenu = ({ name, onLogout }) => (
+const UserMenu = ({ email, onLogout }) => (
   <div className={styles.container}>
-    
-    <span className={styles.name}>Welcome, {name}</span>
-    <button type="button" onClick={onLogout}>
+    <span className={styles.name}> {email}</span>
+    <button type="button" className={styles.btn} onClick={onLogout}>
       Logout
     </button>
   </div>
 );
 const mapStateToProps = (state) => ({
-  name: getUsername(state),
+  email: getUserEmail(state),
 });
 
 const mapDispatchToProps = {
