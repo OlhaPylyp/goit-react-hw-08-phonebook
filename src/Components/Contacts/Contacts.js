@@ -15,8 +15,8 @@ class Contacts extends Component {
     return (
       <div>
         <FormPhonebook />
-        <Section title="Contacts list">
-          <Filter />
+            <Filter />
+        <Section title="Contacts list">      
           <ContactItem />{" "}
         </Section>
       </div>
