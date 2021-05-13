@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./AppBar.module.css";
 import { connect } from "react-redux";
-import phoneBook from "../../image/phoneBook.png";
+import phoneBook from "../../image/3.png";
 import { getIsAuthenticated } from "../../Redux/auth/auth_selector";
 
 const Navigation = ({ isLoginOn }) => (
