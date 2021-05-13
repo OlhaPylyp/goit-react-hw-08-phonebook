@@ -11,7 +11,7 @@
     "contacts.js.map": "/static/js/contacts.e5cb2290.chunk.js.map",
     "homePage.js": "/static/js/homePage.a88f6be8.chunk.js",
     "homePage.js.map": "/static/js/homePage.a88f6be8.chunk.js.map",
-    "main.css": "/static/css/main.400db5d9.chunk.css",
+    "main.css": "/static/css/main.3ce2400a.chunk.css",
     "main.js": "/static/js/main.299e9c04.chunk.js",
     "main.js.map": "/static/js/main.299e9c04.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.a8adc962.js",
@@ -24,7 +24,7 @@
     "static/css/Login.95e23ad8.chunk.css.map": "/static/css/Login.95e23ad8.chunk.css.map",
     "static/css/Register.6d8a4be3.chunk.css.map": "/static/css/Register.6d8a4be3.chunk.css.map",
     "static/css/contacts.a280f140.chunk.css.map": "/static/css/contacts.a280f140.chunk.css.map",
-    "static/css/main.400db5d9.chunk.css.map": "/static/css/main.400db5d9.chunk.css.map",
+    "static/css/main.3ce2400a.chunk.css.map": "/static/css/main.3ce2400a.chunk.css.map",
     "static/js/6.e62feb56.chunk.js.LICENSE.txt": "/static/js/6.e62feb56.chunk.js.LICENSE.txt",
     "static/media/AppBar.module.css": "/static/media/2.c670e17b.jpg",
     "static/media/3.3ef2cf90.png": "/static/media/3.3ef2cf90.png"
@@ -33,7 +33,7 @@
     "static/js/runtime-main.a8adc962.js",
     "static/css/6.de71bbd8.chunk.css",
     "static/js/6.e62feb56.chunk.js",
-    "static/css/main.400db5d9.chunk.css",
+    "static/css/main.3ce2400a.chunk.css",
     "static/js/main.299e9c04.chunk.js"
   ]
 }
